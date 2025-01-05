@@ -19,8 +19,7 @@ export function NavMenu() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    console.log('Toggling menu, current state:', mobileMenuOpen);
-    setMobileMenuOpen(!mobileMenuOpen);
+    setMobileMenuOpen((prev) => !prev);
   };
 
   return (
@@ -130,8 +129,8 @@ export function NavMenu() {
             <Button 
               variant="ghost" 
               size="sm"
-              className="p-1"
-              onClick={toggleMenu}
+              className="p-1 hover:bg-stone-100/90"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-expanded={mobileMenuOpen}
             >
               <Menu className="h-6 w-6" />
@@ -142,28 +141,30 @@ export function NavMenu() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-x-0 top-[64px] bg-white/80 backdrop-blur-md border-b border-stone-200/80 shadow-lg md:hidden z-50">
-          <div className="container px-4 py-4 space-y-4">
+        <div className="fixed inset-x-0 top-[64px] min-h-screen bg-white border-b border-stone-200/80 shadow-sm md:hidden z-50">
+          <div className="container px-4 py-6 space-y-6">
             {/* Services Section */}
-            <div className="space-y-2">
-              <div className="px-3 py-2 text-sm font-medium text-stone-500">Services</div>
+            <div className="space-y-3">
+              <div className="px-3 py-2 text-sm font-medium text-stone-900 border-l-2 border-stone-900">
+                Services
+              </div>
               <Link 
                 href="/services/personal"
-                className="block px-3 py-2 rounded-md hover:bg-stone-100/80 text-base font-normal"
+                className="block px-3 py-2.5 rounded-md hover:bg-stone-100/90 text-base font-normal transition-colors duration-200"
                 onClick={toggleMenu}
               >
                 Personal Tax Services
               </Link>
               <Link 
                 href="/services/business"
-                className="block px-3 py-2 rounded-md hover:bg-stone-100/80 text-base font-normal"
+                className="block px-3 py-2.5 rounded-md hover:bg-stone-100/90 text-base font-normal transition-colors duration-200"
                 onClick={toggleMenu}
               >
                 Business Tax Services
               </Link>
               <Link 
                 href="/services/planning"
-                className="block px-3 py-2 rounded-md hover:bg-stone-100/80 text-base font-normal"
+                className="block px-3 py-2.5 rounded-md hover:bg-stone-100/90 text-base font-normal transition-colors duration-200"
                 onClick={toggleMenu}
               >
                 Tax Planning
@@ -171,18 +172,20 @@ export function NavMenu() {
             </div>
 
             {/* Pricing Section */}
-            <div className="space-y-2">
-              <div className="px-3 py-2 text-sm font-medium text-stone-500">Pricing</div>
+            <div className="space-y-3">
+              <div className="px-3 py-2 text-sm font-medium text-stone-900 border-l-2 border-stone-900">
+                Pricing
+              </div>
               <Link 
                 href="/pricing/personal"
-                className="block px-3 py-2 rounded-md hover:bg-stone-100/80 text-base font-normal"
+                className="block px-3 py-2.5 rounded-md hover:bg-stone-100/90 text-base font-normal transition-colors duration-200"
                 onClick={toggleMenu}
               >
                 Personal Tax Pricing
               </Link>
               <Link 
                 href="/pricing/business"
-                className="block px-3 py-2 rounded-md hover:bg-stone-100/80 text-base font-normal"
+                className="block px-3 py-2.5 rounded-md hover:bg-stone-100/90 text-base font-normal transition-colors duration-200"
                 onClick={toggleMenu}
               >
                 Business Tax Pricing
@@ -191,14 +194,14 @@ export function NavMenu() {
 
             <Link 
               href="/portal"
-              className="block px-3 py-2 rounded-md hover:bg-stone-100/80 text-base font-normal"
+              className="block px-3 py-2.5 rounded-md hover:bg-stone-100/90 text-base font-normal transition-colors duration-200"
               onClick={toggleMenu}
             >
               Client Portal
             </Link>
 
             <div className="pt-2">
-              <Button className="w-full font-normal" asChild>
+              <Button className="w-full font-normal shadow-sm" asChild>
                 <Link href="/book-consultation" onClick={toggleMenu}>
                   Book Consultation
                 </Link>
