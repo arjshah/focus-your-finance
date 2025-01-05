@@ -24,7 +24,7 @@ export function NavMenu() {
   };
 
   return (
-    <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-stone-200/80">
+    <nav className="fixed w-full bg-white/95 backdrop-blur-md z-50 border-b border-stone-200/80">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="text-xl font-normal text-stone-800">
@@ -36,7 +36,7 @@ export function NavMenu() {
             <NavigationMenu>
               <NavigationMenuList className="gap-6">
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-base font-normal bg-transparent hover:bg-white/90">Services</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-base font-normal bg-transparent hover:bg-stone-100/80">Services</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid w-[500px] gap-3 p-4 md:grid-cols-2 bg-white/80 backdrop-blur-md">
                       <div className="row-span-3">
@@ -75,7 +75,7 @@ export function NavMenu() {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-base font-normal bg-transparent hover:bg-white/90">Pricing</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-base font-normal bg-transparent hover:bg-stone-100/80">Pricing</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid gap-3 p-6 md:w-[400px] bg-white/80 backdrop-blur-md">
                       <div className="grid grid-cols-1 gap-3">
@@ -149,21 +149,21 @@ export function NavMenu() {
               <div className="px-3 py-2 text-sm font-medium text-stone-500">Services</div>
               <Link 
                 href="/services/personal"
-                className="block px-3 py-2 rounded-md hover:bg-white/90 text-base font-normal"
+                className="block px-3 py-2 rounded-md hover:bg-stone-100/80 text-base font-normal"
                 onClick={toggleMenu}
               >
                 Personal Tax Services
               </Link>
               <Link 
                 href="/services/business"
-                className="block px-3 py-2 rounded-md hover:bg-white/90 text-base font-normal"
+                className="block px-3 py-2 rounded-md hover:bg-stone-100/80 text-base font-normal"
                 onClick={toggleMenu}
               >
                 Business Tax Services
               </Link>
               <Link 
                 href="/services/planning"
-                className="block px-3 py-2 rounded-md hover:bg-white/90 text-base font-normal"
+                className="block px-3 py-2 rounded-md hover:bg-stone-100/80 text-base font-normal"
                 onClick={toggleMenu}
               >
                 Tax Planning
@@ -175,14 +175,14 @@ export function NavMenu() {
               <div className="px-3 py-2 text-sm font-medium text-stone-500">Pricing</div>
               <Link 
                 href="/pricing/personal"
-                className="block px-3 py-2 rounded-md hover:bg-white/90 text-base font-normal"
+                className="block px-3 py-2 rounded-md hover:bg-stone-100/80 text-base font-normal"
                 onClick={toggleMenu}
               >
                 Personal Tax Pricing
               </Link>
               <Link 
                 href="/pricing/business"
-                className="block px-3 py-2 rounded-md hover:bg-white/90 text-base font-normal"
+                className="block px-3 py-2 rounded-md hover:bg-stone-100/80 text-base font-normal"
                 onClick={toggleMenu}
               >
                 Business Tax Pricing
@@ -191,7 +191,7 @@ export function NavMenu() {
 
             <Link 
               href="/portal"
-              className="block px-3 py-2 rounded-md hover:bg-white/90 text-base font-normal"
+              className="block px-3 py-2 rounded-md hover:bg-stone-100/80 text-base font-normal"
               onClick={toggleMenu}
             >
               Client Portal
