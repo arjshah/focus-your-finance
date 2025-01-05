@@ -22,24 +22,38 @@ export default function Home() {
       <NavMenu />
       
       {/* Hero Section */}
-      <section className="pt-24 md:pt-32 pb-16 px-4">
-        <div className="container mx-auto max-w-6xl">
+      <section className="relative pt-24 md:pt-32 pb-16 px-4 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/hero.png"
+            alt="Professional tax services"
+            fill
+            priority
+            className="object-cover object-center"
+            quality={100}
+          />
+          <div className="absolute inset-0 bg-stone-900/60 backdrop-blur-[2px]" />
+        </div>
+
+        <div className="container mx-auto max-w-6xl relative">
           <div className="text-center space-y-8">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal text-stone-900 tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal text-white tracking-tight">
               Expert Tax Solutions for Your
-              <span className="block text-stone-700 mt-2">Financial Success</span>
+              <span className="block mt-2">Financial Success</span>
             </h1>
-            <p className="text-lg md:text-xl text-stone-600 max-w-2xl mx-auto font-light leading-relaxed">
+            <p className="text-lg md:text-xl text-stone-100 max-w-2xl mx-auto font-light leading-relaxed">
               Professional tax services tailored to your needs. We help individuals and businesses navigate complex tax landscapes with confidence.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 md:pt-8">
-              <Button size="lg" className="font-normal w-full sm:w-auto" asChild>
+            <div className="pt-6 md:pt-8">
+              <Button 
+                size="lg" 
+                className="font-normal w-full sm:w-auto bg-white text-stone-900 hover:bg-white/90 shadow-lg hover:shadow-xl transition-all duration-300 px-8" 
+                asChild
+              >
                 <Link href="/book-consultation">
                   Book Initial Consultation <Calendar className="ml-2 h-4 w-4" />
                 </Link>
-              </Button>
-              <Button size="lg" variant="outline" className="font-normal w-full sm:w-auto">
-                View Services <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
           </div>

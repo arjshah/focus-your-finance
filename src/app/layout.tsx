@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { GeistSans } from 'geist/font/sans';
 import "./globals.css";
 import { Footer } from "@/components/footer";
-
-const geist = Geist({
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Focus your Finance | Professional Tax Services",
@@ -19,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${geist.className} antialiased bg-stone-50`}>
+      <body className={`${GeistSans.className} antialiased bg-stone-50`}>
         {children}
         <Footer />
       </body>
